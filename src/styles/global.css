@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-bg: var(--color-neutral-200);
+  --color-surface: var(--color-neutral-100);
+  --color-border: var(--color-neutral-300);
+  --color-text: var(--color-neutral-900);
+}
+
+.dark {
+  --color-bg: var(--color-neutral-900);
+  --color-surface: var(--color-neutral-800);
+  --color-border: var(--color-neutral-700);
+  --color-text: var(--color-neutral-100);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.frame {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+/*
+Maybe change this to an Astro component
+if I ever need to (doubt)
+or change it back to Tailwind class on each anchor element
+*/
+a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
